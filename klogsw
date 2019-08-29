@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#
+# Watch for Kubernetes pod completion and display log; useful for watching output of cronjobs
+#
+# Usage: klogsw <pod-prefix|cronjob-name>
+#
+
+kubectl get pods -w | 
+grep --line-buffered "$1.*Completed" |
+stdbuf -o0 cut -d' ' -f1 |
+while read PODNAME; do 
+	echo --------- $(date +%T) $PODNAME----------- 
+	kubectl logs $PODNAME
+done
+

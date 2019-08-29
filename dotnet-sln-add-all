@@ -1,0 +1,2 @@
+#!/bin/bash
+grep '.*csproj.*: {}' graph.dg | cut -d '"' -f 2 | xargs -n 1 -I{}  dotnet sln add {}

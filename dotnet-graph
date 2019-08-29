@@ -1,0 +1,2 @@
+#!/bin/bash
+dotnet msbuild -t:GenerateRestoreGraphFile -p:RestoreGraphOutputPath=graph.dg
