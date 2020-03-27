@@ -1,2 +1,4 @@
 #!/bin/bash
-sudo ipsec status  | grep 'Security Associations' | cut -d '(' -f 2 | cut -d ',' -f 1
+STATUS=$(sudo ipsec status  | grep 'Security Associations' | cut -d '(' -f 2 | cut -d ',' -f 1)
+echo "<txt>$STATUS</txt>"
+echo "<txtclick>sudo ipsec up dev</txtclick>"
