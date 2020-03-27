@@ -1,0 +1,2 @@
+#!/bin/bash
+sudo ipsec status  | grep 'Security Associations' | cut -d '(' -f 2 | cut -d ',' -f 1

@@ -1,0 +1,5 @@
+#!/bin/bash
+US=$(curl -s https://coronavirus-tracker-api.herokuapp.com/v2/latest?source=csbs | jq '.latest.confirmed')
+WORLD=$(curl -s https://coronavirus-tracker-api.herokuapp.com/v2/latest?source=jhu| jq '.latest.confirmed')
+MA=$(curl -s 'https://coronavirus-tracker-api.herokuapp.com/v2/locations?source=csbs&province=Massachusetts' | jq '.latest.confirmed')
+echo "<txt><span weight='bold' fgcolor='White'>$WORLD / $US / $MA</span></txt>"
