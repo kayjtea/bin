@@ -111,3 +111,7 @@ export PROMPT_COMMAND='__git_ps1 "\u@\h \[\e[33m\]\w\[\e[00m\]" "\n\\\$ "' # Git
 #}
 #export PS1="\u@\h \[\e[32m\]\w \[\e[91m\] __git_ps1 \[\e[00m\]$ "
 
+alias ls="ls -F"
+alias vi=vim
+alias sec2="curl config2.finomial.io/health/ready"
+
