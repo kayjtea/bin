@@ -1,0 +1,9 @@
+#!/bin/bash
+status=$(ipsec-status)
+if [ "$status" = "0 up" ]; then
+  sudo ipsec up dev
+else
+  sudo ipsec down dev
+fi
+
+

@@ -1,0 +1,2 @@
+#!/bin/bash
+i3-msg "append_layout /home/kim/.i3/workspace-$1.json"
