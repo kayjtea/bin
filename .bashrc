@@ -111,6 +111,19 @@ export PROMPT_COMMAND='__git_ps1 "\u@\h \[\e[33m\]\w\[\e[00m\]" "\n\\\$ "' # Git
 #}
 #export PS1="\u@\h \[\e[32m\]\w \[\e[91m\] __git_ps1 \[\e[00m\]$ "
 
+HISTSIZE=500000
+HISTFILESIZE=500000
+# Ignore dupes and space commands
+HISTCONTROL=ignoreboth:erasedups
+# Save and show timestamps
+HISTTIMEFORMAT='%F %T '
+# append to the history file, don't overwrite it
+shopt -s histappend
+# Save and reload the history after each command finishes
+# This one I have a function to turn on/off. Effect is that commands are
+# accessible in all terminals after execution.
+export PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 alias ls="ls -F"
 alias vi=vim
 alias sec2="curl config2.finomial.io/health/ready"

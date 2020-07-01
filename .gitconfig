@@ -39,3 +39,5 @@
 	name = Kimberly Tran
 [core]
 	autocrlf = input
+[pull]
+	ff = only
